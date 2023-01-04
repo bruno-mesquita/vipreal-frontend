@@ -24,8 +24,8 @@ const schema = z.object({
   password: z.string().min(8, 'A senha teve ter no minimo 8 caracteres'),
 });
 
-type Input = z.input<typeof schema>;
-type Output = z.output<typeof schema>;
+export type Input = z.input<typeof schema>;
+export type Output = z.output<typeof schema>;
 
 interface RegisterFormProps {
   onSubmit: (values: Output) => Promise<void>;

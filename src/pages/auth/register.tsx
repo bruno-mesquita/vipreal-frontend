@@ -3,11 +3,10 @@ import Link from 'next/link';
 import { MdArrowBack } from 'react-icons/md';
 
 import { RegisterForm } from '@components/auth';
+import { useRegister } from '@hooks/useRegister';
 
 export default function Register() {
-  const onSubmit: Parameters<typeof RegisterForm>['0']['onSubmit'] = async (
-    input
-  ) => {};
+  const register = useRegister();
 
   return (
     <>
@@ -23,7 +22,7 @@ export default function Register() {
             <MdArrowBack className="fill-gray-800" size={20} />
             Voltar
           </Link>
-          <RegisterForm onSubmit={onSubmit} />
+          <RegisterForm onSubmit={register} />
         </div>
       </main>
     </>

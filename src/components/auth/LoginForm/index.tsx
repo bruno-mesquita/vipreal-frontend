@@ -9,7 +9,7 @@ const schema = z.object({
   password: z.string().min(8, 'A senha teve ter no minimo 8 caracteres'),
 });
 
-type Input = z.infer<typeof schema>;
+export type Input = z.infer<typeof schema>;
 
 interface LoginFormProps {
   onSubmit: (input: Input) => Promise<void>;
