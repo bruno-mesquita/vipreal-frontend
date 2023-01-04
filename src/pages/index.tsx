@@ -5,7 +5,9 @@ import { ImSpinner8 } from 'react-icons/im';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import { MdMenu } from 'react-icons/md';
-import { Header } from '@components/common';
+
+import { Layout } from '@components/common';
+import type { NextPageWithLayout } from './_app';
 
 const GoogleMap = dynamic(() =>
   import('@react-google-maps/api').then((mod) => ({ default: mod.GoogleMap }))
@@ -27,7 +29,7 @@ function later(delay: number) {
   });
 }
 
-export default function Home() {
+const Home: NextPageWithLayout = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const { isLoaded } = useJsApiLoader({
@@ -78,8 +80,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-gray-200 w-full h-[100vh] relative justify-center flex items-center">
-        <Header />
+      <main className="bg-gray-200 w-full h-screen relative justify-center flex items-center">
         <>
           {isLoaded ? (
             <GoogleMap
@@ -147,4 +148,8 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+Home.getLayout = (page) => <Layout>{page}</Layout>;
+
+export default Home;

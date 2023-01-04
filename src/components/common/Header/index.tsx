@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function Header() {
   return (
-    <header className="bg-white shadow-md w-full h-14 flex items-center justify-between pl-8 absolute top-0 z-50">
+    <header className="bg-white shadow-md fixed w-full h-14 flex items-center justify-between pl-8 z-50">
       <span>Vip Real</span>
       <nav>
         <ul className="flex">
