@@ -2,17 +2,27 @@ import Link from 'next/link';
 
 export function Header() {
   return (
-    <header className="bg-gray-400 w-full h-14 flex items-center justify-between px-10">
+    <header className="bg-white shadow-md w-full h-14 flex items-center justify-between pl-8 absolute top-0 z-50">
       <span>Vip Real</span>
       <nav>
         <ul className="flex">
-          <li>Anuncios</li>
-          <li>Quem somos</li>
+          <li className="mx-2 text-gray-700">
+            <Link href="#">Anuncios</Link>
+          </li>
+          <li className="mx-2 text-gray-700">
+            <Link href="#">Quem somos</Link>
+          </li>
+          <li className="mx-2 text-gray-700">
+            <Link href="#">Sobre</Link>
+          </li>
         </ul>
       </nav>
-      <div>
-        <Link href="/auth/login">Entrar</Link>
-      </div>
+      <Link
+        href="/auth/login"
+        className="bg-blue-600 flex items-center justify-center w-36 text-white font-medium h-full  hover:bg-blue-800 transition-colors cursor-pointer"
+      >
+        Entrar
+      </Link>
     </header>
   );
 }
