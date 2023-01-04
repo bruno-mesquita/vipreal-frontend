@@ -1,9 +1,9 @@
-import Head from 'next/head';
+import { useJsApiLoader } from '@react-google-maps/api';
+import { AnimatePresence, motion, useMotionValue } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import { useCallback, useState } from 'react';
 import { ImSpinner8 } from 'react-icons/im';
-import { useJsApiLoader } from '@react-google-maps/api';
-import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import { MdMenu } from 'react-icons/md';
 
 import { Layout } from '@components/common';
@@ -104,10 +104,10 @@ const Home: NextPageWithLayout = () => {
               type: 'spring',
               duration: 0.4,
             }}
-            data-isOpen={isOpen}
+            data-open={isOpen}
             className="flex justify-between items-center absolute w-2/5 bg-white rounded-lg p-5 shadow-lg
-            data-[isOpen=false]:p-0
-            data-[isOpen=false]:w-fit
+            data-[open=false]:p-0
+            data-[open=false]:w-fit
           transition-all
           "
           >
