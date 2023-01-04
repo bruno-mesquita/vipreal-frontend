@@ -27,7 +27,7 @@ export function LoginForm({ onSubmit }: LoginFormProps) {
   return (
     <form
       onSubmit={handleSubmit(onValid)}
-      className="flex flex-col items-center w-4/5  md:w-2/5 lg:w-1/4 bg-white rounded-lg p-8 shadow-lg"
+      className="flex flex-col items-center w-4/5 md:w-2/5 lg:w-1/4 bg-white rounded-lg p-8 shadow-lg"
     >
       <label className="mb-5 w-full">
         <input
